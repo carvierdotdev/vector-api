@@ -1,0 +1,12 @@
+githubRepoOwner: carvierdotdev
+githubRepoName: vector-api
+githubHost: github.com
+githubRemote: origin
+githubBranch: main
+requireChecks: false
+requireApproval: false
+mergeMethod: merge
+mergeQueue: false
+forceFetchTags: false
+showPrTitlesInStack: false
+branchPushIndividually: false
