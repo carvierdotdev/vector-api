@@ -24,8 +24,14 @@ async function parseCSV(filePath: string): Promise<Row[]> {
         reject(err);
       })
       .on("end", () => {
-        console.log(rows);
         resolve(rows);
       });
   });
 }
+
+const seed = async () => {
+  const data = await parseCSV("./training_data.csv");
+  console.log(data);
+};
+
+seed();
