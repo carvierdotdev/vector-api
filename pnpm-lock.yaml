@@ -12,11 +12,17 @@ importers:
         specifier: ^3.0.0
         version: 3.0.0
     devDependencies:
+      '@types/node':
+        specifier: ^22.1.0
+        version: 22.1.0
       typescript:
         specifier: ^5.5.4
         version: 5.5.4
 
 packages:
+
+  '@types/node@22.1.0':
+    resolution: {integrity: sha512-AOmuRF0R2/5j1knA3c6G3HOk523Ga+l+ZXltX8SF1+5oqcXijjfTd8fY3XRZqSihEu9XhtQnKYLmkFaoxgsJHw==}
 
   csv-parser@3.0.0:
     resolution: {integrity: sha512-s6OYSXAK3IdKqYO33y09jhypG/bSDHPuyCme/IdEHfWpLf/jKcpitVFyOC6UemgGk8v7Q5u2XE0vvwmanxhGlQ==}
@@ -31,7 +37,14 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  undici-types@6.13.0:
+    resolution: {integrity: sha512-xtFJHudx8S2DSoujjMd1WeWvn7KKWFRESZTMeL1RptAYERu29D6jphMjjY+vn96jvN3kVPDNxU/E13VTaXj6jg==}
+
 snapshots:
+
+  '@types/node@22.1.0':
+    dependencies:
+      undici-types: 6.13.0
 
   csv-parser@3.0.0:
     dependencies:
@@ -40,3 +53,5 @@ snapshots:
   minimist@1.2.8: {}
 
   typescript@5.5.4: {}
+
+  undici-types@6.13.0: {}
