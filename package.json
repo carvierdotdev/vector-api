@@ -11,12 +11,24 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/node": "^22.1.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.4",
     "tsx": "^4.16.5",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "wrangler": "^3.69.1"
   },
   "dependencies": {
+    "@types/body-parser": "^1.19.5",
     "@upstash/vector": "^1.1.5",
-    "csv-parser": "^3.0.0"
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.0.0",
+    "hono": "^4.5.4",
+    "langchain": "^0.2.13",
+    "openai": "^4.55.0",
+    "ts-node": "^10.9.2"
   }
 }
