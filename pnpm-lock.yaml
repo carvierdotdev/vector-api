@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@upstash/vector':
+        specifier: ^1.1.5
+        version: 1.1.5
       csv-parser:
         specifier: ^3.0.0
         version: 3.0.0
@@ -165,6 +168,9 @@ packages:
   '@types/node@22.1.0':
     resolution: {integrity: sha512-AOmuRF0R2/5j1knA3c6G3HOk523Ga+l+ZXltX8SF1+5oqcXijjfTd8fY3XRZqSihEu9XhtQnKYLmkFaoxgsJHw==}
 
+  '@upstash/vector@1.1.5':
+    resolution: {integrity: sha512-55+Beu/kCwjcnzg6fnMN06v9PYU1lv9NQfQwpjrJAQTH8GOprcRsQeyXBdNHKNzoQvRnVS0ENd5CDgFoljfrAw==}
+
   csv-parser@3.0.0:
     resolution: {integrity: sha512-s6OYSXAK3IdKqYO33y09jhypG/bSDHPuyCme/IdEHfWpLf/jKcpitVFyOC6UemgGk8v7Q5u2XE0vvwmanxhGlQ==}
     engines: {node: '>= 10'}
@@ -276,6 +282,8 @@ snapshots:
   '@types/node@22.1.0':
     dependencies:
       undici-types: 6.13.0
+
+  '@upstash/vector@1.1.5': {}
 
   csv-parser@3.0.0:
     dependencies:

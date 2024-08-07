@@ -16,6 +16,7 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
+    "@upstash/vector": "^1.1.5",
     "csv-parser": "^3.0.0"
   }
 }
