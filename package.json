@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "seed": "tsx ./seed.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,9 +12,11 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^22.1.0",
+    "tsx": "^4.16.5",
     "typescript": "^5.5.4"
   },
   "dependencies": {
+    "@upstash/vector": "^1.1.5",
     "csv-parser": "^3.0.0"
   }
 }
