@@ -129,3 +129,10 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+
+# From Josh - https://github.com/joschan21/profanity.dev
+dist
+node_modules
+.env
+wrangler.toml
