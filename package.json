@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "seed": "tsx ./seed.ts",
+    "dev": "wrangler dev src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

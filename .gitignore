@@ -136,3 +136,4 @@ dist
 node_modules
 .env
 wrangler.toml
+.wrangler
