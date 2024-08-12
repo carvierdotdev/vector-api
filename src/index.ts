@@ -2,12 +2,22 @@ import { Index } from "@upstash/vector";
 import { Hono } from "hono";
 import { env } from "hono/adapter";
 import { cors } from "hono/cors";
+import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
+
+const semanticSplitter = new RecursiveCharacterTextSplitter({
+  chunkSize: 25,
+  separators: [" "],
+  chunkOverlap: 12,
+});
+
 const app = new Hono();
 
 type Environment = {
   VECTOR_URL: string;
   VECTOR_TOKEN: string;
 };
+
+const WHITELIST = ["swear"];
 
 app.use(cors());
 
@@ -56,6 +66,18 @@ app.post("/", async (c) => {
         }
       );
     }
+
+    // Validation of the words against the WHITELIST
+    message = message
+      .split(/\s/)
+      .filter((word) => !WHITELIST.includes(word.toLowerCase()))
+      .join(" ");
+
+    // Text into Chunks
+    const [wordChunks, semanticChunks] = await Promise.all([
+      splitTextIntoWords(message),
+      splitTextIntoSemantics(message),
+    ]);
   } catch (error) {
     console.error(error);
 
@@ -71,5 +93,17 @@ app.post("/", async (c) => {
     );
   }
 });
+
+function splitTextIntoWords(text: string) {
+  return text.split(/\s/);
+}
+
+async function splitTextIntoSemantics(text: string) {
+  if (text.split(/\s/).length === 1) return []; // no semantics for single words
+
+  const documents = await semanticSplitter.createDocuments([text]);
+  const chunks = documents.map((chunk) => chunk.pageContent);
+  return chunks;
+}
 
 export default app;
